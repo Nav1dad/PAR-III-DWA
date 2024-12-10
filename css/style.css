@@ -1,0 +1,273 @@
+/* Reseteo y estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Necesario para sticky footer */
+    min-height: 100vh; /* El body ocupa toda la altura de la pantalla */
+}
+
+/* Encabezado */
+header {
+    background: #0056b3;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+nav{
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: white;
+}
+
+/*H2 */
+h2{
+    text-align: center;
+    background-color: bisque;
+}
+
+/* Navegación */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px;
+    background: #f4f4f4;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #0056a3;
+    font-weight: bold;
+}
+
+/* Contenido del dashboard */
+.dashboard .grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    padding: 20px;
+    flex: 1; /* Hace que el contenido principal crezca para empujar el footer */
+}
+
+/* Tarjetas */
+.card {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+    width: 80px; /* Ajusta el ancho de la imagen */
+    height: 80px; /* Ajusta la altura de la imagen */
+    object-fit: cover; /* Ajusta cómo se recorta la imagen */
+    margin: 10px; /* Margen alrededor de la imagen */
+    background-color: #0056a3; /* Fondo opcional */
+}
+
+.card p {
+    padding: 10px;
+}
+
+ 
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer fijo al final */
+footer {
+    background: #0056a3;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    margin-top: auto; /* Empuja el footer hacia abajo */
+}
+
+/* Estilos responsivos */
+@media (max-width: 1500px) {
+    .card img {
+        width: 80px; /* Reducir tamaño en pantallas pequeñas */
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column; /* Colocar menú en columna */
+        align-items: center; /* Centrar elementos */
+    }
+}
+
+.info {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover .info {
+    opacity: 1;
+    max-height: 100px; /* Ajusta según el contenido */
+    background-color: #769ab9;
+}
+
+.info.visible {
+    opacity: 1;
+    max-height: 100px; /* Ajusta según el contenido */
+}
+
+.info p{
+    text-align: justify;
+}
+/*----------------------------------------------------------*/
+/* Banner Inicial */
+.banner {
+    position: relative;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    text-align: center;
+}
+
+.banner-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.banner-text p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Introducción */
+.intro {
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.intro .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #0056b3;
+}
+
+.intro p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Sección de Contacto */
+.contact {
+    background-color: #0056b3;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contact .container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.contact .btn {
+    background-color: #f8f9fa;
+    color: #0056b3;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contact .btn:hover {
+    background-color: #e9ecef;
+    color: #003f7d;
+}
+
+/* Responsividad adicional */
+@media (max-width: 600px) {
+    .banner-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .banner-text p {
+        font-size: 1rem;
+    }
+
+    .intro h2, .contact h2 {
+        font-size: 1.5rem;
+    }
+
+    .intro p, .contact p {
+        font-size: 0.9rem;
+    }
+}
+
+.container a{
+    background-color: #0056a3;
+     color: rgb(255, 255, 255); 
+     padding: 10px 20px; 
+     text-decoration: none; 
+     border-radius: 5px;
+}
+
+.container h2{
+    color:#0056a3;
+}
